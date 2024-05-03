@@ -1,0 +1,14 @@
+addonNamespace: lacework
+sellerName: Lacework
+addonName: lacework-agent-helm-chart
+addonVersion: 1.0.0
+architectures:
+  - arm64
+  - amd64
+kubernetesVersion:
+  - 1.27
+secretMapping: {}
+# Source: cluster_selector/templates/clustersList.yaml
+clusters:
+  - arm-1-27-blueprint
+  - amd-1-27-blueprint

@@ -1,0 +1,49 @@
+{
+  "Catalog": "AWSMarketplace",
+  "ChangeSet": [
+    {
+      "ChangeType": "AddDeliveryOptions",
+      "Entity": {
+        "Type": "ContainerProduct@1.0",
+        "Identifier": "prod-zwzkhifjdpw6k"
+      },
+      "DetailsDocument": {
+        "Version": {
+          "VersionTitle": "Cloudsoft-amp-0.0.1",
+          "ReleaseNotes": "Test product for: Cloudsoft-amp-0.0.1"
+        },
+        "DeliveryOptions": [
+          {
+            "DeliveryOptionTitle": "Test delivery option for: Cloudsoft-amp-0.0.1",
+            "Visibility": "Limited",
+            "Details": {
+              "EksAddOnDeliveryOptionDetails": {
+                "ContainerImages": [
+                  "709825985650.dkr.ecr.us-east-1.amazonaws.com/cloudsoft-development/images:7.0.1-cloudsoft-development-cloudsoft-amp-1707485645",
+                  "709825985650.dkr.ecr.us-east-1.amazonaws.com/cloudsoft-development/images:7.0.2-cloudsoft-development-cloudsoft-amp-1707485645"
+                ],
+                "HelmChartUri": "709825985650.dkr.ecr.us-east-1.amazonaws.com/cloudsoft-development/helm:0.1.6-cloudsoft-amp-helm-1707734073",
+                "Description": "Test description for: Cloudsoft-amp-0.0.1",
+                "UsageInstructions": "Test usage instructions for: Cloudsoft-amp-0.0.1",
+                "AddOnName": "amp",
+                "AddOnVersion": "0.0.1",
+                "AddOnType": "networking",
+                "CompatibleKubernetesVersions": [
+                  "1.26",
+                  "1.27",
+                  "1.28"
+                ],
+                "SupportedArchitectures": [
+                  "arm64",
+                  "amd64"
+                ],
+                "Namespace": "cloudsoft-amp"
+              }
+            }
+          }
+        ]
+      },
+      "ChangeName": "PublishAddonNew"
+    }
+  ]
+}

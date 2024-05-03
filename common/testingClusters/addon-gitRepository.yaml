@@ -1,0 +1,14 @@
+---
+# Source: testing-cluster-resources/templates/GitRepoMain.yaml
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: addon-publication
+  namespace:  upbound-system
+spec:
+  interval: 5m0s
+  url: https://github.com/cloudsoft-fusion/aws-eks-addon-publication
+  ref:
+    branch: main
+  secretRef:
+    name: github-token

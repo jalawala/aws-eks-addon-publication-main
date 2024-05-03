@@ -1,0 +1,17 @@
+{{- range .Values.clusters }}
+---
+apiVersion: eks.aws.upbound.io/v1beta1
+kind: Addon
+metadata:
+  {{- $clusterId := printf "%s" . | substr 0 8 | trimSuffix "-"}}
+  name: {{ printf "%s-%s" $clusterId $.Values.addonName | lower | trunc 63 | trimSuffix "-"}}
+  namespace: {{ $.Values.addonNamespace }}
+spec:
+  forProvider:
+{{/* Add-on name on the EKS api is composed by the seller alias and the add-on name as <mp-seller-alias>_<add-on-name>.*/}}
+    addonName: {{ printf "%s_%s" $.Values.testingMarketplaceSellerAlias $.Values.addonName | lower | trunc 63 | trimSuffix "-"}}
+    region: {{ $.Values.region }}
+    clusterName: {{ . }}
+  providerConfigRef:
+    name: {{  $.Values.providerConfigName }}
+{{- end }} {{/* $clusters loop */}}

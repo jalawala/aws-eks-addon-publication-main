@@ -1,0 +1,17 @@
+{{- range .Values.clusters }}
+---
+{{- $clusterId := printf "%s" . | substr 0 8 | trimSuffix "-"}}
+apiVersion: eks.aws.upbound.io/v1beta1
+kind: ClusterAuth
+metadata:
+  name: {{ printf "%s-%s-%s" "addon-tester" $clusterId "blueprint" | lower | trunc 63 | trimSuffix "-"}}
+spec:
+  forProvider:
+    region: {{ $.Values.region }}
+    clusterName: {{ . }}
+  providerConfigRef:
+    name: {{ $.Values.providerConfigRefName }}
+  writeConnectionSecretToRef:
+    namespace: {{ $.Values.upboundNamespace }}{{/*# defaults: upbound-system */}}
+    name: {{ $clusterId }}-connection
+{{- end }} {{/* $clusters loop */}}

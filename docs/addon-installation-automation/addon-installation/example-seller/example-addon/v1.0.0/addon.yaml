@@ -1,0 +1,28 @@
+---
+# Source: aws-sleek-addon-installation-kustomization/templates/addon.yaml
+apiVersion: eks.aws.upbound.io/v1beta1
+kind: Addon
+metadata:
+  name: amd-1-28-example-addon
+  namespace: example-ns
+spec:
+  forProvider:
+    addonName: example-addon
+    region: eu-north-1
+    clusterName: addon-tester-amd-1-28-blueprint
+  providerConfigRef:
+    name: default
+---
+# Source: aws-sleek-addon-installation-kustomization/templates/addon.yaml
+apiVersion: eks.aws.upbound.io/v1beta1
+kind: Addon
+metadata:
+  name: arm-1-28-example-addon
+  namespace: example-ns
+spec:
+  forProvider:
+    addonName: example-addon
+    region: eu-north-1
+    clusterName: addon-tester-arm-1-28-blueprint
+  providerConfigRef:
+    name: default

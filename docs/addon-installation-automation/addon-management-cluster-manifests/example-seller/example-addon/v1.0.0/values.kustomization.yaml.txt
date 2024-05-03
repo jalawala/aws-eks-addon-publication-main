@@ -1,0 +1,3 @@
+sellerName: example-seller
+addonName: example-addon
+addonVersion: 1.0.0

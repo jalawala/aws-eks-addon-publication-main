@@ -1,0 +1,6 @@
+{
+  "source_repo": "304295633295.dkr.ecr.eu-west-1.amazonaws.com/cloudsoft-amp-helm",
+  "source_tag": "0.1.6",
+  "target_repo": "709825985650.dkr.ecr.us-east-1.amazonaws.com/cloudsoft-development/helm",
+  "target_tag": "0.1.6-cloudsoft-amp-helm-1707734073"
+}

@@ -1,0 +1,60 @@
+{
+  "sellerName": "Cloudsoft",
+  "sellerMarketPlaceAlias": "cs-dev",
+  "accountId": "012345678901",
+  "productName": "amp",
+  "productCategory": "networking",
+  "productUrl": "https://cloudsoft.io/software",
+  "chartAutoCorrection" : {
+    "hooks": true,
+    "capabilities": false,
+    "releaseService": true
+  },
+  "addon": {
+    "name": "amp",
+    "versionName": "Cloudsoft AMP 7.0.2 mp1",
+    "version": "0.0.1",
+    "namespace": "cloudsoft-amp",
+    "type": "networking",
+    "helmChartUrl": "304295633295.dkr.ecr.eu-west-1.amazonaws.com/cloudsoft-amp-helm:0.1.6",
+    "containerImagesUrls": [
+      "709825985650.dkr.ecr.us-east-1.amazonaws.com/cloudsoft-development/cloudsoft-amp:7.0.1",
+      "709825985650.dkr.ecr.us-east-1.amazonaws.com/cloudsoft-development/cloudsoft-amp:7.0.2"
+    ],
+    "prerequisites": "Follow instructions in: https://docs.cloudsoft.io/\n",
+    "usageInstructions": "deploy it and enjoy\n",
+    "kubernetesVersion": [
+      1.26,
+      1.27,
+      1.28
+    ],
+    "architectures": [
+      "arm64",
+      "amd64"
+    ],
+    "environmentOverride": {
+      "param1": "value1",
+      "param2": "value2"
+    },
+    "customConfiguration": [
+      "customConfigurationOne",
+      "customConfigurationTwo",
+      "parent.customConfigurationChildOne"
+    ],
+    "serviceAccounts": {
+      "serviceAccountOne": {
+        "iamManagedPolicies": [
+          "arn:aws:iam::aws:policy/AWSMarketplaceMeteringRegisterUsage"
+        ],
+        "iamInlinePolicies": {
+          "ampS3": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"AmpPersistence\",\n            \"Action\": [\n                \"s3:GetObject\",\n                \"s3:PutObject\"\n            ],\n            \"Effect\": \"Allow\",\n            \"Resource\": [\n                \"arn:aws:s3:::cloudsoft-amp-*\"\n            ]\n        }\n    ]\n}\n"
+        }
+      },
+      "serviceAccountTwo": {
+        "iamManagedPolicies": [
+          "arn:aws:iam::aws:policy/AWSMarketplaceMeteringRegisterUsage"
+        ]
+      }
+    }
+  }
+}

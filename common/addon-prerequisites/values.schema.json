@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "required": [
+    "addonNamespace",
+    "sellerName",
+    "addonName",
+    "addonVersion",
+    "clusters"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "addonNamespace": {
+      "type": "string"
+    },
+    "sellerName": {
+      "type": "string"
+    },
+    "addonName": {
+      "type": "string"
+    },
+    "addonVersion": {
+      "type": "string"
+    },
+    "secretMapping": {
+      "title": "Map of parameters supported for inject secrets and the keys expected to be found in. DO NOT INCLUDE SECRET VALUES",
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

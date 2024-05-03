@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "required": [
+    "sellerName",
+    "addonName",
+    "addonVersion",
+    "upboundNamespace",
+    "region",
+    "clusters"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "sellerName": {
+      "type": "string"
+    },
+    "addonName": {
+      "type": "string"
+    },
+    "addonVersion": {
+      "type": "string"
+    },
+    "addonNamespace": {
+      "type": "string"
+    },
+    "upboundNamespace": {
+      "type": "string"
+    },
+    "providerConfigName": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "repoUrl": {
+      "type": "string"
+    },
+    "testingMarketplaceSellerAlias": {
+      "type": "string"
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

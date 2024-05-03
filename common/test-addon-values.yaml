@@ -1,0 +1,18 @@
+repoUrl: https://github.com/cloudsoft-fusion/aws-eks-addon-publication
+
+upboundNamespace: upbound-system
+providerConfigName: irsa-providerconfig
+
+testingMarketplaceSellerAlias: cloudsoft-development
+
+region: ap-northeast-2
+
+# This map uses as *key* the name of the architecture and the kubernetes version as is expected in the issue input.
+# The *value* is the name of the cluster that matches those constrains
+archK8sVersionClusterNameMap:
+  amd64-1.26: amd-1-26-blueprint
+  amd64-1.27: amd-1-27-blueprint
+  amd64-1.28: amd-1-28-blueprint
+  arm64-1.26: arm-1-26-blueprint
+  arm64-1.27: arm-1-27-blueprint
+  arm64-1.28: arm-1-28-blueprint

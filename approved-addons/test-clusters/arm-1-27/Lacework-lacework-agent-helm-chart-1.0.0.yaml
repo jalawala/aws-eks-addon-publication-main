@@ -1,0 +1,9 @@
+# Add-on prerequisites
+---
+# Source: aws-sleek-addon/templates/namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    name: lacework
+  name: lacework

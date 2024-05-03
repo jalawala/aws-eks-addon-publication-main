@@ -1,0 +1,15 @@
+---
+{{- if not .Values.gitRepository}}
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: {{ printf "gr-%s-%s-%s" .Values.sellerName .Values.addonName .Values.addonVersion | lower | trunc 63 }}
+  namespace:  {{ .Values.upboundNamespace }}
+spec:
+  interval: 5m0s
+  url: {{ .Values.repoUrl }}
+  ref:
+    branch: feature/{{.Values.sellerName}}/{{.Values.addonName}}/{{.Values.addonVersion}}
+  secretRef:
+    name: github-token
+{{- end }}

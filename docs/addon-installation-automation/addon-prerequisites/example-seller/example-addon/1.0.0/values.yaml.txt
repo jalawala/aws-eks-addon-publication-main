@@ -1,0 +1,14 @@
+addonNamespace: example-ns
+sellerName: example-seller
+addonName: example-addon
+addonVersion: 1.0.0
+secretMapping:
+  exampleSecretOne:
+    - secretKeyOneOne
+    - secretKeyOneTwo
+  exampleSecretTwo:
+    - secretKeyTwoOne
+    - secretKeyTwoTwo
+clusters:
+  - addon-tester-amd-1-28
+  - addon-tester-arm-1-28

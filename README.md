@@ -1,1 +1,1 @@
-# aws-eks-addon-publication-main
+# aws-eks-addon-publication

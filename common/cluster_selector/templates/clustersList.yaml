@@ -1,0 +1,7 @@
+clusters:
+{{- range $arI, $arch := .Values.architectures }}
+  {{- range $verI, $ver := $.Values.kubernetesVersion }}
+    {{- $cKey := printf "%s-%s" $arch ($ver | toString) }}
+  - {{ index (index $.Values.archK8sVersionClusterNameMap) $cKey | indent  0}}
+  {{- end }}
+{{- end}}

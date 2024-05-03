@@ -1,0 +1,24 @@
+{{/*Kustomizations to be applied on test clusters using the `kubeConfig` reference*/}}
+{{- range .Values.clusters }}
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  {{- $clusterId := printf "%s" . | substr 0 8 | trimSuffix "-"}}
+  name: {{ printf "%s-%s-%s-%s" $clusterId $.Values.sellerName $.Values.addonName $.Values.addonVersion | lower | trunc 63 | trimSuffix "-"}}
+  namespace: {{ $.Values.upboundNamespace }}
+  labels:
+    app: aws-sleek-addon
+    cluster: {{ . }}
+spec:
+  interval: 30s
+  path: ./addons/{{ $.Values.sellerName}}/{{ $.Values.addonName}}/{{ $.Values.addonVersion }}/manifests/prerequisites
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: {{ $.Values.gitRepository | default (printf "gr-%s-%s-%s" $.Values.sellerName $.Values.addonName $.Values.addonVersion) | lower | trunc 63 }}
+  kubeConfig:
+    secretRef:
+      name: {{ $clusterId }}-connection
+      key: kubeconfig
+{{- end }} {{/* $clusters loop */}}

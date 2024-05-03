@@ -1,0 +1,7 @@
+apiVersion: v2
+name: aws-sleek-addon-installation-kustomization
+description: Kustomization for installing EKS sleek add-on
+
+type: application
+version: 0.1.0
+appVersion: "1.16.0"

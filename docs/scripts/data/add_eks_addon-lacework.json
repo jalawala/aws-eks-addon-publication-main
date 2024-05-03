@@ -1,0 +1,48 @@
+{
+  "Catalog": "AWSMarketplace",
+  "ChangeSet": [
+    {
+      "ChangeType": "AddDeliveryOptions",
+      "Entity": {
+        "Type": "ContainerProduct@1.0",
+        "Identifier": "prod-zwzkhifjdpw6k"
+      },
+      "DetailsDocument": {
+        "Version": {
+          "VersionTitle": "Lacework-lacework-agent-helm-chart-1.0.0",
+          "ReleaseNotes": "Test product for: Lacework-lacework-agent-helm-chart-1.0.0"
+        },
+        "DeliveryOptions": [
+          {
+            "DeliveryOptionTitle": "Test delivery option for: Lacework-lacework-agent-helm-chart-1.0.0",
+            "Visibility": "Limited",
+            "Details": {
+              "EksAddOnDeliveryOptionDetails": {
+                "ContainerImages": [
+                  "304295633295.dkr.ecr.us-east-1.amazonaws.com/cloudsoft-development/images:laceworks-304295633295.dkr.ecr.us-east-1.amazonaws.com-images-1707913732"
+                ],
+                "HelmChartUri": "304295633295.dkr.ecr.us-east-1.amazonaws.com/cloudsoft-development/helm:5.2.0-lacework-agent-1707913740",
+                "Description": "Test description for: Lacework-lacework-agent-helm-chart-1.0.0",
+                "UsageInstructions": "Test usage instructions for: Lacework-lacework-agent-helm-chart-1.0.0",
+                "AddOnName": "lacework-agent-helm-chart",
+                "AddOnVersion": "1.0.0",
+                "AddOnType": "security",
+                "CompatibleKubernetesVersions": [
+                  1.26,
+                  1.27,
+                  1.28
+                ],
+                "SupportedArchitectures": [
+                  "arm64",
+                  "amd64"
+                ],
+                "Namespace": "lacework"
+              }
+            }
+          }
+        ]
+      },
+      "ChangeName": "PublishAddonNew"
+    }
+  ]
+}

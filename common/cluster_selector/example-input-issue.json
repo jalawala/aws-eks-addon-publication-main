@@ -1,0 +1,69 @@
+{
+  "sellerName": "Example",
+  "sellerMarketPlaceAlias": "example-software",
+  "accountId": 123456789012,
+  "productName": "Example Solution",
+  "productCategory": "networking",
+  "productUrl": "https://example.io/solution",
+  "marketplaceProductId": "prod-exa12thsdnghk",
+  "marketplaceProductUrl": "https://aws.amazon.com/marketplace/pp/prodview-1abcd2najvj5y",
+  "chartAutoCorrection": {
+    "hooks": true,
+    "capabilities": true,
+    "releaseService": false
+  },
+  "addon": {
+    "name": "solution",
+    "versionName": "Example Software Solution 1",
+    "version": "1.0.0",
+    "namespace": "ex-sol",
+    "type": "networking",
+    "helmChartUrl": "123456789012.dkr.ecr.us-east-1.amazonaws.com/example-software/solution-helm:0.1.0",
+    "helmChartUrlProtocol": "oci",
+    "containerImagesUrls": [
+      "709825985650.dkr.ecr.us-east-1.amazonaws.com/example-software/solution:0.1.0"
+    ],
+    "prerequisites": "Follow  instructions in: https://docs.example.com/installation/prerequisites\n",
+    "usageInstructions": "Follow  instructions in: https://docs.example.com/instructions\n",
+    "kubernetesVersion": [
+      1.26,
+      1.27,
+      1.28
+    ],
+    "architectures": [
+      "arm64",
+      "amd64"
+    ],
+    "environmentOverride": {
+      "param1": "value1",
+      "param2": "value2"
+    },
+    "customConfiguration": [
+      "resourceLimits.requests.cpu",
+      "resourceLimits.requests.memory",
+      "resourceLimits.limits.cpu",
+      "resourceLimits.limits.memory"
+    ],
+    "secretMapping": {
+      "exampleSecret": [
+        "secretKeyOne",
+        "secretKeyTwo"
+      ]
+    },
+    "serviceAccounts": {
+      "serviceAccountOne": {
+        "iamManagedPolicies": [
+          "arn:aws:iam::aws:policy/AWSMarketplaceMeteringRegisterUsage"
+        ],
+        "iamInlinePolicies": {
+          "persistenceS3": "{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"SolutionPersistence\",\n            \"Action\": [\n                \"s3:GetObject\",\n                \"s3:PutObject\"\n            ],\n            \"Effect\": \"Allow\",\n            \"Resource\": [\n                \"arn:aws:s3:::example-solution-*\"\n            ]\n        }\n    ]\n}\n"
+        }
+      },
+      "serviceAccountTwo": {
+        "iamManagedPolicies": [
+          "arn:aws:iam::aws:policy/CloudWatchLogsReadOnlyAccess"
+        ]
+      }
+    }
+  }
+}

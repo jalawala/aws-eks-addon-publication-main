@@ -1,0 +1,60 @@
+---
+# Source: aws-sleek-addon/templates/namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    name: example-ns-two
+  name: example-ns-two
+---
+# Source: aws-sleek-addon/templates/externalSecret.yaml
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: amp-external-secret-examplesecretone
+  namespace: example-ns-two
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: cluster-secretstore
+    kind: ClusterSecretStore
+  target:
+    name: examplesecretone
+    creationPolicy: Owner
+  data:
+    - secretKey: secretKeyOneOne
+      remoteRef:
+        key: example-seller/example-addon-two/1.0.0
+        property: secretKeyOneOne
+        decodingStrategy: Base64
+    - secretKey: secretKeyOneTwo
+      remoteRef:
+        key: example-seller/example-addon-two/1.0.0
+        property: secretKeyOneTwo
+        decodingStrategy: Base64
+---
+# Source: aws-sleek-addon/templates/externalSecret.yaml
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: amp-external-secret-examplesecrettwo
+  namespace: example-ns-two
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    name: cluster-secretstore
+    kind: ClusterSecretStore
+  target:
+    name: examplesecrettwo
+    creationPolicy: Owner
+  data:
+    - secretKey: secretKeyTwoOne
+      remoteRef:
+        key: example-seller/example-addon-two/1.0.0
+        property: secretKeyTwoOne
+        decodingStrategy: Base64
+    - secretKey: secretKeyTwoTwo
+      remoteRef:
+        key: example-seller/example-addon-two/1.0.0
+        property: secretKeyTwoTwo
+        decodingStrategy: Base64

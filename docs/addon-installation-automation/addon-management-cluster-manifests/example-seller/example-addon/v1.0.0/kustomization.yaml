@@ -1,0 +1,75 @@
+---
+# Source: aws-sleek-addon-kustomization/templates/gitRepository.yaml
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: gr-example-seller-example-addon-1.0.0
+  namespace:  upbound-system
+spec:
+  interval: 5m0s
+  url: https://github.com/cloudsoft-fusion/aws-eks-addon-publication
+  ref:
+    branch: feature/example-seller/example-addon/1.0.0
+  secretRef:
+    name: github-token
+---
+# Source: aws-sleek-addon-kustomization/templates/management-cluster-kustomization.yaml
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: example-seller-example-addon-1.0.0
+  namespace: upbound-system
+  labels:
+    app: aws-sleek-addon
+    seller: example-seller
+    addon: example-addon
+    addon-version: 1.0.0
+spec:
+  interval: 30s
+  path: ./kustomizations/example-seller/example-addon/1.0.0/management-cluster
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: gr-example-seller-example-addon-1.0.0
+---
+# Source: aws-sleek-addon-kustomization/templates/testing-clusters-kustomization.yaml
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: amd-1-28-example-seller-example-addon-1.0.0
+  namespace: upbound-system
+  labels:
+    app: aws-sleek-addon
+    cluster: addon-tester-amd-1-28-blueprint
+spec:
+  interval: 30s
+  path: ./addons/example-seller/example-addon/1.0.0/manifests
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: gr-example-seller-example-addon-1.0.0
+  kubeConfig:
+    secretRef:
+      name: amd-1-28-connection
+      key: kubeconfig
+---
+# Source: aws-sleek-addon-kustomization/templates/testing-clusters-kustomization.yaml
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: arm-1-28-example-seller-example-addon-1.0.0
+  namespace: upbound-system
+  labels:
+    app: aws-sleek-addon
+    cluster: addon-tester-arm-1-28-blueprint
+spec:
+  interval: 30s
+  path: ./addons/example-seller/example-addon/1.0.0/manifests
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: gr-example-seller-example-addon-1.0.0
+  kubeConfig:
+    secretRef:
+      name: arm-1-28-connection
+      key: kubeconfig

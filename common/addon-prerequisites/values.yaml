@@ -1,0 +1,12 @@
+addonNamespace:
+sellerName:
+addonName:
+addonVersion:
+#secretMapping:
+#  exampleSecretOne:
+#    - secretKeyOneOne
+#    - secretKeyOneTwo
+#  exampleSecretTwo:
+#    - secretKeyTwoOne
+#    - secretKeyTwoTwo
+clusters:

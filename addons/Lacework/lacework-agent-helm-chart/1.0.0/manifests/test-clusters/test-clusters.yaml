@@ -1,0 +1,75 @@
+---
+# Source: addon-management-cluster-manifests/templates/gitRepository.yaml
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: gr-lacework-lacework-agent-helm-chart-1.0.0
+  namespace:  upbound-system
+spec:
+  interval: 5m0s
+  url: https://github.com/cloudsoft-fusion/aws-eks-addon-publication
+  ref:
+    branch: feature/Lacework/lacework-agent-helm-chart/1.0.0
+  secretRef:
+    name: github-token
+---
+# Source: addon-management-cluster-manifests/templates/management-cluster-kustomization.yaml
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: lacework-lacework-agent-helm-chart-1.0.0
+  namespace: upbound-system
+  labels:
+    app: aws-sleek-addon
+    seller: Lacework
+    addon: lacework-agent-helm-chart
+    addon-version: 1.0.0
+spec:
+  interval: 30s
+  path: ./addons/Lacework/lacework-agent-helm-chart/1.0.0/manifests/management-cluster
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: gr-lacework-lacework-agent-helm-chart-1.0.0
+---
+# Source: addon-management-cluster-manifests/templates/testing-clusters-kustomization.yaml
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: arm-1-27-lacework-lacework-agent-helm-chart-1.0.0
+  namespace: upbound-system
+  labels:
+    app: aws-sleek-addon
+    cluster: arm-1-27-blueprint
+spec:
+  interval: 30s
+  path: ./addons/Lacework/lacework-agent-helm-chart/1.0.0/manifests/prerequisites
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: gr-lacework-lacework-agent-helm-chart-1.0.0
+  kubeConfig:
+    secretRef:
+      name: arm-1-27-connection
+      key: kubeconfig
+---
+# Source: addon-management-cluster-manifests/templates/testing-clusters-kustomization.yaml
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: amd-1-27-lacework-lacework-agent-helm-chart-1.0.0
+  namespace: upbound-system
+  labels:
+    app: aws-sleek-addon
+    cluster: amd-1-27-blueprint
+spec:
+  interval: 30s
+  path: ./addons/Lacework/lacework-agent-helm-chart/1.0.0/manifests/prerequisites
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: gr-lacework-lacework-agent-helm-chart-1.0.0
+  kubeConfig:
+    secretRef:
+      name: amd-1-27-connection
+      key: kubeconfig
