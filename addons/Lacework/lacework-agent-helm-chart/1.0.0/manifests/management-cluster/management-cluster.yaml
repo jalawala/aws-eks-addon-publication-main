@@ -3,14 +3,14 @@
 apiVersion: eks.aws.upbound.io/v1beta1
 kind: Addon
 metadata:
-  name: arm-1-27-lacework-agent-helm-chart
+  name: arm-1-29-lacework-agent-helm-chart
   namespace: lacework
 spec:
   forProvider:
 
     addonName: cloudsoft-development_lacework-agent-helm-chart
     region: eu-west-3
-    clusterName: arm-1-27-blueprint
+    clusterName: arm-1-29-blueprint
   providerConfigRef:
     name: irsa-providerconfig
 ---
@@ -18,13 +18,13 @@ spec:
 apiVersion: eks.aws.upbound.io/v1beta1
 kind: Addon
 metadata:
-  name: amd-1-27-lacework-agent-helm-chart
+  name: amd-1-29-lacework-agent-helm-chart
   namespace: lacework
 spec:
   forProvider:
 
     addonName: cloudsoft-development_lacework-agent-helm-chart
     region: eu-west-3
-    clusterName: amd-1-27-blueprint
+    clusterName: amd-1-29-blueprint
   providerConfigRef:
     name: irsa-providerconfig

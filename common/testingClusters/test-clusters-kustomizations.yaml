@@ -162,40 +162,40 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: arm-1-27-addon-prerequisites
+  name: arm-1-29-addon-prerequisites
   namespace: upbound-system
   labels:
-    cluster: arm-1-27-blueprint
+    cluster: arm-1-29-blueprint
 spec:
   interval: 30s
-  path: ./approved-addons/test-clusters/arm-1-27
+  path: ./approved-addons/test-clusters/arm-1-29
   prune: true
   sourceRef:
     kind: GitRepository
     name: addon-publication
   kubeConfig:
     secretRef:
-      name: arm-1-27-connection
+      name: arm-1-29-connection
       key: kubeconfig
 ---
 # Source: addon-management-cluster-manifests/templates/testing-clusters-kustomization.yaml
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: amd-1-27-addon-prerequisites
+  name: amd-1-29-addon-prerequisites
   namespace: upbound-system
   labels:
-    cluster: amd-1-27-blueprint
+    cluster: amd-1-29-blueprint
 spec:
   interval: 30s
-  path: ./approved-addons/test-clusters/amd-1-27
+  path: ./approved-addons/test-clusters/amd-1-29
   prune: true
   sourceRef:
     kind: GitRepository
     name: addon-publication
   kubeConfig:
     secretRef:
-      name: amd-1-27-connection
+      name: amd-1-29-connection
       key: kubeconfig
 ---
 ## Source: addon-management-cluster-manifests/templates/testing-clusters-kustomization.yaml

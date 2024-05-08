@@ -160,8 +160,8 @@ flux reconcile kustomization $KUSTOMIZATION_NAME -n $NAMESPACE
 TEST_CLUSTERS=(
 "amd-1-26-blueprint"
 "arm-1-26-blueprint"
-"amd-1-27-blueprint"
-"arm-1-27-blueprint"
+"amd-1-29-blueprint"
+"arm-1-29-blueprint"
 "amd-1-28-blueprint"
 "arm-1-28-blueprint"
 )

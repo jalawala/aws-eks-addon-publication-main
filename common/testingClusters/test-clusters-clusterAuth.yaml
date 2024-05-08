@@ -3,28 +3,28 @@
 apiVersion: eks.aws.upbound.io/v1beta1
 kind: ClusterAuth
 metadata:
-  name: addon-tester-amd-1-27-blueprint
+  name: addon-tester-amd-1-29-blueprint
 spec:
   forProvider:
-    region: ap-northeast-2
-    clusterName: amd-1-27-blueprint
+    region: us-east-1
+    clusterName: amd-1-29-blueprint
   providerConfigRef:
     name: irsa-providerconfig
   writeConnectionSecretToRef:
     namespace: upbound-system
-    name: amd-1-27-connection
+    name: amd-1-29-connection
 ---
 # Source: testing-cluster-resources/templates/clusterAuth.yaml
 apiVersion: eks.aws.upbound.io/v1beta1
 kind: ClusterAuth
 metadata:
-  name: addon-tester-arm-1-27-blueprint
+  name: addon-tester-arm-1-29-blueprint
 spec:
   forProvider:
-    region: ap-northeast-2
-    clusterName: arm-1-27-blueprint
+    region: us-east-1
+    clusterName: arm-1-29-blueprint
   providerConfigRef:
     name: irsa-providerconfig
   writeConnectionSecretToRef:
     namespace: upbound-system
-    name: arm-1-27-connection
+    name: arm-1-29-connection

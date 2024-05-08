@@ -1,4 +1,4 @@
-region: ap-northeast-2
+region: us-east-1
 providerConfigRefName: irsa-providerconfig
 upboundNamespace: upbound-system
 #gitAddonsRepository: aws-eks-addon-publication
@@ -9,7 +9,7 @@ gitAddonsRepositoryBranch: main
 clusters:
 #  - amd-1-26-blueprint
 #  - arm-1-26-blueprint
-  - amd-1-27-blueprint
-  - arm-1-27-blueprint
+  - amd-1-29-blueprint
+  - arm-1-29-blueprint
 #  - amd-1-28-blueprint
 #  - arm-1-28-blueprint
