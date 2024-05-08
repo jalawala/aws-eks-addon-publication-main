@@ -6,4 +6,4 @@ spec:
   credentials:
     source: IRSA
   assumeRoleChain:
-    - roleARN: "arn:aws:iam::905418342944:role/eks-connector-role"
+    - roleARN: "arn:aws:iam::000474600478:role/eks-connector-role"
