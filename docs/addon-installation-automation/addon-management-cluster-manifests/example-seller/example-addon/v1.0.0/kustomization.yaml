@@ -7,7 +7,7 @@ metadata:
   namespace:  upbound-system
 spec:
   interval: 5m0s
-  url: https://github.com/cloudsoft-fusion/aws-eks-addon-publication
+  url: https://github.com/jalawala/aws-eks-addon-publication-main 
   ref:
     branch: feature/example-seller/example-addon/1.0.0
   secretRef:

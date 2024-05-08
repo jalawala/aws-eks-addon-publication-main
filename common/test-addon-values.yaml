@@ -1,4 +1,4 @@
-repoUrl: https://github.com/cloudsoft-fusion/aws-eks-addon-publication
+repoUrl: https://github.com/jalawala/aws-eks-addon-publication-main 
 
 upboundNamespace: upbound-system
 providerConfigName: irsa-providerconfig

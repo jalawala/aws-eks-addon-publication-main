@@ -2,7 +2,7 @@ region: ap-northeast-2
 providerConfigRefName: irsa-providerconfig
 upboundNamespace: upbound-system
 #gitAddonsRepository: aws-eks-addon-publication
-repoUrl: https://github.com/cloudsoft-fusion/aws-eks-addon-publication
+repoUrl: https://github.com/jalawala/aws-eks-addon-publication-main 
 gitAddonsRepositoryName: addon-publication
 gitAddonsRepositoryBranch: main
 # [Required] clusterName is required
