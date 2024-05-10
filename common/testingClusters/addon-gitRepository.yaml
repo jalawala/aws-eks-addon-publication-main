@@ -6,7 +6,7 @@ metadata:
   name: addon-publication
   namespace:  upbound-system
 spec:
-  interval: 5m0s
+  interval: 10s
   url: https://github.com/jalawala/aws-eks-addon-publication-main 
   ref:
     branch: main
