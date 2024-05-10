@@ -10,7 +10,7 @@ spec:
     region: us-east-1
     clusterName: arm-1-29-blueprint
   providerConfigRef:
-    name: irsa-providerconfig
+    name: irsa-management-cluster
 ---
 # Source: aws-sleek-addon-installation-kustomization/templates/addon.yaml
 apiVersion: eks.aws.upbound.io/v1beta1
@@ -23,4 +23,4 @@ spec:
     region: us-east-1
     clusterName: amd-1-29-blueprint
   providerConfigRef:
-    name: irsa-providerconfig
+    name: irsa-management-cluster

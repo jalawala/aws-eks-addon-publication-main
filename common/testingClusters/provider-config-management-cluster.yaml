@@ -1,0 +1,7 @@
+apiVersion: aws.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: irsa-management-cluster
+spec:
+  credentials:
+    source: IRSA
