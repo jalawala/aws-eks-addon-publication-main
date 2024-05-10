@@ -3,12 +3,10 @@
 apiVersion: eks.aws.upbound.io/v1beta1
 kind: Addon
 metadata:
-  name: arm-1-29-lacework-agent-helm-chart
-  namespace: lacework
+  name: eks-pod-identity-agent-arm-1-29
 spec:
   forProvider:
-
-    addonName: cloudsoft-development_lacework-agent-helm-chart
+    addonName: eks-pod-identity-agent
     region: us-east-1
     clusterName: arm-1-29-blueprint
   providerConfigRef:
@@ -18,12 +16,10 @@ spec:
 apiVersion: eks.aws.upbound.io/v1beta1
 kind: Addon
 metadata:
-  name: amd-1-29-lacework-agent-helm-chart
-  namespace: lacework
+  name: eks-pod-identity-agent-amd-1-29
 spec:
   forProvider:
-
-    addonName: cloudsoft-development_lacework-agent-helm-chart
+    addonName: eks-pod-identity-agent
     region: us-east-1
     clusterName: amd-1-29-blueprint
   providerConfigRef:
