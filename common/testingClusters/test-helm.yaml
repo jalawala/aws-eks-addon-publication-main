@@ -10,4 +10,4 @@ spec:
       version: 9.12.1
     namespace: default
   providerConfigRef:
-    name: provider-config-k8s-amd-1-29-blueprint
+    name: provider-config-helm-amd-1-29-blueprint
