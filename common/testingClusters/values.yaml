@@ -2,9 +2,9 @@ cluster1:
   labels:
     cluster: amd-1-29-blueprint
   source:
-    repoURL: https://github.com/aws-samples/eks-blueprints-workloads
+    repoURL: https://github.com/jalawala/aws-eks-addon-publication-main
     targetRevision: main
-    path: clusters/cluster1/infra
+    path: ./clusters/cluster1/infra
 cluster2:
   labels:
     cluster: arm-1-29-blueprint
