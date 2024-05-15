@@ -2,11 +2,11 @@
 apiVersion: helm.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
-  name: provider-config-helm-amd-1-29-blueprint1
+  name: provider-config-helm-amd-1-29-blueprint
 spec:
   credentials:
     source: Secret
     secretRef:
-      name: amd-1-29-connection
+      name: kubecontext-amd-1-29
       namespace: upbound-system
       key: kubeconfig
