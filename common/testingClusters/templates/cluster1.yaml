@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster11
+  name: cluster1
   namespace: argocd
   labels:
     {{- toYaml .Values.cluster1.labels | nindent 4 }}  
