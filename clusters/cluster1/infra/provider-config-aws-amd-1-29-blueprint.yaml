@@ -1,7 +1,7 @@
 apiVersion: aws.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
-  name: provider-config-aws-workload-clusters
+  name: provider-config-aws-amd-1-29-blueprint
 spec:
   credentials:
     source: IRSA
