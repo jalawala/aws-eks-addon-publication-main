@@ -7,6 +7,6 @@ spec:
   credentials:
     source: Secret
     secretRef:
-      name: arm-1-29-connection
+      name: kubecontext-arm-1-29
       namespace: upbound-system
       key: kubeconfig
